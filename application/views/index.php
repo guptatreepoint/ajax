@@ -199,6 +199,32 @@
 
 		//edit function work end here
 
+		//delete function start here
+		function deleteFun(id)
+		{
+			if(confirm('Are you sure?')==true)
+			{
+				$.ajax({
+					url:'<?php echo base_url('my_controller/deleteSingleData'); ?>',
+					method:"post",
+					dataType:"json",
+					data:{id:id},
+					success:function(response)
+					{
+						if(response==1)
+						{
+							alert('Data Deleted Successfully');
+							$('#example1').DataTable().ajax.reload();
+						}
+						else
+						{
+							alert('Deletion Failed !');
+						}
+					}
+				})
+			}
+		}
+		//delete function end here
 	</script>
 </body>
 </html>

@@ -31,4 +31,10 @@ class Ajax_model extends CI_Model
 		$query = $this->db->update($tablename,$data,$where);
 		return $query;
 	}
+
+	public function deleteData($tablename,$where)
+	{
+		$query = $this->db->delete($tablename,$where);
+		return $query;
+	}
 }

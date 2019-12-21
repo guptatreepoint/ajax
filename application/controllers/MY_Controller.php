@@ -38,7 +38,9 @@ class MY_Controller extends CI_Controller {
 		$i = 1;
 		foreach ($resultList as $key => $value) {
 
-			$button = '<a class="btn-sm btn-success text-light" onclick="editFun('.$value['id'].')" href="#"> Edit</a>';
+			$button = '<a class="btn-sm btn-success text-light" onclick="editFun('.$value['id'].')" href="#"> Edit</a> ';
+
+			$button .= ' <a class="btn-sm btn-danger text-light" onclick="deleteFun('.$value['id'].')" href="#"> Delete</a>';
 
 			$result['data'][] = array(
 				$i++,
@@ -77,6 +79,20 @@ class MY_Controller extends CI_Controller {
 			echo 1;
 		}
 		else{
+			echo 2;
+		}
+	}
+
+	public function deleteSingleData()
+	{
+		$id = $this->input->post('id');
+		$dataDelete = $this->ajax_model->deleteData('person',array('id'=>$id));
+		if($dataDelete==true)
+		{
+			echo 1;
+		}
+		else
+		{
 			echo 2;
 		}
 	}
