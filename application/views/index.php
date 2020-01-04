@@ -15,7 +15,6 @@
 		  Add Record
 		</button><br><br>
 
-
 		<form id="createForm">
 			<!-- Modal -->
 			<div class="modal fade" id="createModal" aria-hidden="true">

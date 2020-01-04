@@ -37,4 +37,10 @@ class Ajax_model extends CI_Model
 		$query = $this->db->delete($tablename,$where);
 		return $query;
 	}
+
+	public function insertDynamicData($tablename, $data)
+	{
+		$query = $this->db->insert($tablename, $data);
+		return $query;
+	}
 }
